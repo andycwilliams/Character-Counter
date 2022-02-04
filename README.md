@@ -1,4 +1,5 @@
 # Character-Counter
+
 Site that counts how many characters/vowels/consonants/words/sentences/etc. are within the submitted text
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -6,6 +7,9 @@ Site that counts how many characters/vowels/consonants/words/sentences/etc. are 
 [Deployed Link](https://andywilliams-portfolio.herokuapp.com/)
 
 <!-- ![Screenshot of deployed application, homepage of site with timer and random tip](/screenshot.png?raw=true "Screenshot of deployed application") -->
+
+Template courtesy of W3Schools:
+https://www.w3schools.com/w3css/tryw3css_templates_webpage.htm
 
 ## Table of Contents
 
