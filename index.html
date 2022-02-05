@@ -11,7 +11,6 @@
 <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
 <body>
 
-<!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
@@ -23,24 +22,32 @@
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<main>
 <div class="w3-main" style="margin-left:250px">
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">Let's Count Some Stuff</h1>
-      <p>Description</p><br>
-      <textarea class="w3-padding-16" id="horoscope-container" style="padding: 10px; border: 2px solid black;" rows="6" cols="100">Enter your text here.</textarea>
+      <p>What would you like to count?</p><br>
+      <div class="tag">Letters: 
+          <input type="checkbox" id="uppercaseCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+      <div class="tag">Numbers:  
+          <input type="checkbox" id="lowercaseCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+      <div class="tag">Characters:  
+          <input type="checkbox" id="lowercaseCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+      <div class="tag">Special Characters:  
+          <input type="checkbox" id="lowercaseCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+      <div class="tag">Words:  
+          <input type="checkbox" id="numbersCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+      <div class="tag">Sentences:   
+          <input type="checkbox" id="specialCharCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+      
+      <textarea class="w3-padding-16" id="horoscope-container" style="padding: 10px; border: 2px solid black;" rows="6" cols="100">Enter your text here.</textarea><br>
+      <button onclick="checkText()">Check!</button>
+
     </div>
   </div>
-
-  <!-- <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div> -->
-
+</main>
   <footer id="myFooter">
     <div class="w3-container w3-theme-l2 w3-padding-32">
       <a class="fa fa-github w3-hover-opacity" style="text-decoration: none;" href="https://github.com/andycwilliams" target="_blank"></a>
@@ -51,10 +58,7 @@
     <div class="w3-container w3-theme-l1">
       <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
     </div>
-
   </footer>
-
-<!-- END MAIN -->
 </div>
 
 </body>
