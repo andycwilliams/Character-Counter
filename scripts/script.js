@@ -1,71 +1,78 @@
-// // Get the Sidebar
-// var mySidebar = document.getElementById("mySidebar");
+// Get the Sidebar
+// const mySidebar = document.getElementById("mySidebar");
 
-// // Get the DIV with overlay effect
-// var overlayBg = document.getElementById("myOverlay");
+// Get the DIV with overlay effect
+// const overlayBg = document.getElementById("myOverlay");
 
-// // Toggle between showing and hiding the sidebar, and add overlay effect
-// function w3_open() {
-//   if (mySidebar.style.display === "block") {
-//     mySidebar.style.display = "none";
-//     overlayBg.style.display = "none";
-//   } else {
-//     mySidebar.style.display = "block";
-//     overlayBg.style.display = "block";
-//   }
-// }
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === "block") {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = "block";
+    overlayBg.style.display = "block";
+  }
+}
 
-// // Close the sidebar with the close button
-// function w3_close() {
-//   mySidebar.style.display = "none";
-//   overlayBg.style.display = "none";
-// }
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
 
 // // ----------------------------------------------------------------
 
-// const charTypeArr = {
-//   // uppercase: ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
-//   // lowercase: ["abcdefghijklmnopqrstuvwxyz"],
-//   letters: ["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"],
-//   numbers: ["0123456789"],
-//   specialCharacters: ["!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"],
-// };
+const charTypeArr = {
+  // uppercase: ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
+  // lowercase: ["abcdefghijklmnopqrstuvwxyz"],
+  letters: ["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"],
+  numbers: ["0123456789"],
+  specialCharacters: ["!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"],
+};
 
 function checkText() {
-  if (document.getElementById("uppercaseCheck").checked) {
-    // userArr.push(charTypeArr.uppercase);
+  const userText = document.getElementById("userText").value;
+  // const countLetters = userText.replace(/\s+/g, "").length;
+
+  if (document.getElementById("letterCheck").checked) {
+    const countLetters = userText.replace(/\s+/g, "").length;
+    console.log(`${countLetters} letters.`);
+    return countLetters;
+  } else {
+    console.log("No letters detected.");
   }
-  if (document.getElementById("lowercaseCheck").checked) {
-    // userArr.push(charTypeArr.lowercase);
+  if (document.getElementById("numberCheck").checked) {
+    const countNumbers = "";
+    console.log(`${countNumbers} numbers.`);
+  } else {
+    console.log("No numbers detected.");
   }
-  if (document.getElementById("numbersCheck").checked) {
-    userArr.push(charTypeArr.numbers);
+  if (document.getElementById("characterCheck").checked) {
+    const countCharacters = userText.replace(/\s+/g, "").length;
+    console.log(countCharacters);
   }
   if (document.getElementById("specialCharCheck").checked) {
-    userArr.push(charTypeArr.specialCharacters);
+    const countSpecialCharacters = "";
+    console.log(`${countSpecialCharacters} special characters.`);
   }
-
-  const joinedUserArr = userArr.join("");
-  const userArrLength = joinedUserArr.length;
-
-  let result = "";
-  for (i = 0; i < getCharCount; i++) {
-    result += joinedUserArr.charAt(Math.floor(Math.random() * userArrLength));
+  if (document.getElementById("wordCheck").checked) {
+    const countWords = "";
+    console.log(`${countWords} words.`);
   }
+  if (document.getElementById("sentenceCheck").checked) {
+    const countSentences = "";
+    console.log(`${countSentences} sentences.`);
+  }
+  // const joinedUserArr = userArr.join("");
+  // const userArrLength = joinedUserArr.length;
 
-  document.getElementById("finalPassword").innerHTML = result;
+  // let result = "";
+  // for (i = 0; i < getCharCount; i++) {
+  //   result += joinedUserArr.charAt(Math.floor(Math.random() * userArrLength));
+  // }
+
+  const finalCount = `There are: ${countLetters} letters.`;
+
+  document.getElementById("finalCount").innerHTML = finalCount;
 }
-
-// There are:
-// ${} letters.
-// ${} numbers.
-// ${} characters.
-// ${} special characters.
-// ${} words.
-// ${} sentences.
-
-const userText = "BLAH blah BLAH";
-const countLetters = userText.replace(/\s+/g, "").length;
-const countCharacters = userText.replace(/\s+/g, "").length;
-
-console.log(countLetters); // 30
