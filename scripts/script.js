@@ -21,36 +21,46 @@ function w3_close() {
   overlayBg.style.display = "none";
 }
 
-// // ----------------------------------------------------------------
+// ----------------------------------------------------------------
 
-const charTypeArr = {
-  // uppercase: ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
-  // lowercase: ["abcdefghijklmnopqrstuvwxyz"],
-  letters: ["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"],
-  numbers: ["0123456789"],
-  specialCharacters: ["!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"],
-};
-
-function checkText() {
+const checkText = () => {
+  // const finalCount = `Your text contains:`;
+  // document.getElementById("finalCount").innerHTML = finalCount;
   const userText = document.getElementById("userText").value;
   // const countLetters = userText.replace(/\s+/g, "").length;
+  // const finalCount = `Your text contains:`;
+
+  if (userText === "") {
+    console.log("Please enter some text.");
+  }
 
   if (document.getElementById("letterCheck").checked) {
-    const countLetters = userText.replace(/\s+/g, "").length;
-    console.log(`${countLetters} letters.`);
-    return countLetters;
-  } else {
-    console.log("No letters detected.");
+    const countLetters = "";
+    // finalCount.innerHTML = `${countLetters} letters.`;
+    // return countLetters;
+    if (countLetters > 0) {
+      console.log(`${countLetters} letters.`);
+    } else {
+      console.log("No letters detected.");
+    }
   }
   if (document.getElementById("numberCheck").checked) {
     const countNumbers = "";
-    console.log(`${countNumbers} numbers.`);
-  } else {
-    console.log("No numbers detected.");
+    if (countNumbers > 0) {
+      console.log(`${countNumbers} numbers.`);
+    } else {
+      console.log("No numbers detected.");
+    }
   }
   if (document.getElementById("characterCheck").checked) {
     const countCharacters = userText.replace(/\s+/g, "").length;
-    console.log(countCharacters);
+    if (countCharacters > 0) {
+      console.log(`${countCharacters} characters.`);
+    } else {
+      console.log("No characters detected.");
+    }
+    // finalCount.innerHTML = `${countCharacters} characters.`;
+    return countCharacters;
   }
   if (document.getElementById("specialCharCheck").checked) {
     const countSpecialCharacters = "";
@@ -72,7 +82,17 @@ function checkText() {
   //   result += joinedUserArr.charAt(Math.floor(Math.random() * userArrLength));
   // }
 
-  const finalCount = `There are: ${countLetters} letters.`;
+  // const finalCount = `Your text contains: \n ${countLetters} letters. ${countNumbers} numbers. ${countCharacters} characters. ${countSpecialCharacters} special characters. ${countWords} words. ${countSentences} sentences.`;
+  // document.getElementById("finalCount").innerHTML = finalCount;
+  // const finalCount = `Your text contains:`;
+};
 
-  document.getElementById("finalCount").innerHTML = finalCount;
-}
+// ----------------------------------------------------------------
+
+// const charTypeArr = {
+//   // uppercase: ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
+//   // lowercase: ["abcdefghijklmnopqrstuvwxyz"],
+//   letters: ["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"],
+//   numbers: ["0123456789"],
+//   specialCharacters: ["!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"],
+// };
