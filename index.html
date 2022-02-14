@@ -30,20 +30,23 @@
       <h1 class="w3-text-teal">Let's Count Some Stuff</h1>
       <p>Enter your text in the field below, then select what you would like to count.</p><br>
       <div class="tag">Letters: 
-          <input type="checkbox" id="letterCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+          <input type="checkbox" id="letterCheck" class="regular-checkbox" checked /><label for="checkbox-1-1"></label></div>
       <div class="tag">Numbers:  
-          <input type="checkbox" id="numberCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
-      <div class="tag">Characters:  
-          <input type="checkbox" id="characterCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+          <input type="checkbox" id="numberCheck" class="regular-checkbox" checked /><label for="checkbox-1-1"></label></div>
       <div class="tag">Special Characters:  
           <input type="checkbox" id="specialCharCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
       <div class="tag">Words:  
           <input type="checkbox" id="wordCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
       <div class="tag">Sentences:   
           <input type="checkbox" id="sentenceCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+      <div class="tag">Total Characters:  
+          <input type="checkbox" id="characterCheck" class="regular-checkbox" checked /><label for="checkbox-1-1"></label></div>
       <button onclick="checkText()">Check!</button><br><br>
 
-      <textarea class="w3-padding-16" id="userText" style="padding: 10px; border: 2px solid black;" rows="6" cols="100" placeholder="Enter your text here."></textarea>
+      <textarea class="w3-padding-16" id="userText" style="padding: 10px; border: 2px solid black;" rows="6" cols="100" maxlength="100" value="TETDSFGDFGDFG"></textarea>
+      <p>Please enter no more than 100 characters</p>
+      <p id="characterLimit">100 characters remaining</p>
+      <p id="characterTotal">0 characters</p>
       <div id="finalCount"></div>
     </div>
   </div>
