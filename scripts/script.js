@@ -36,23 +36,48 @@ const checkText = () => {
   }
 
   if (document.getElementById("letterCheck").checked) {
-    const countLetters = "";
-    // finalCount.innerHTML = `${countLetters} letters.`;
-    // return countLetters;
-    if (countLetters > 0) {
-      console.log(`${countLetters} letters.`);
+    const lowercaseUserText = userText.toLowerCase();
+    const allLetters = "abcdefghijklmnopqrstuvwxyz";
+    let letter;
+    let count = 0;
+
+    for (let i = 0; i < lowercaseUserText.length; i++) {
+      letter = lowercaseUserText.charAt(i);
+      if (allLetters.indexOf(letter) > -1) {
+        count = count + 1;
+      }
+    }
+
+    if (count > 0) {
+      console.log(`${count} letters.`);
+      // finalCount.innerHTML = `${countLetters} letters.`;
+      // return countLetters;
     } else {
       console.log("No letters detected.");
     }
   }
+
   if (document.getElementById("numberCheck").checked) {
-    const countNumbers = "";
-    if (countNumbers > 0) {
-      console.log(`${countNumbers} numbers.`);
+    const numbers = "0123456789";
+    let number;
+    let count = 0;
+
+    for (let i = 0; i < userText.length; i++) {
+      number = userText.charAt(i);
+      if (numbers.indexOf(number) > -1) {
+        count = count + 1;
+      }
+    }
+
+    if (count > 0) {
+      console.log(`${count} numbers.`);
+      // finalCount.innerHTML = `${countLetters} letters.`;
+      // return countLetters;
     } else {
       console.log("No numbers detected.");
     }
   }
+
   if (document.getElementById("characterCheck").checked) {
     const countCharacters = userText.replace(/\s+/g, "").length;
     if (countCharacters > 0) {
@@ -63,18 +88,22 @@ const checkText = () => {
     // finalCount.innerHTML = `${countCharacters} characters.`;
     return countCharacters;
   }
+
   if (document.getElementById("specialCharCheck").checked) {
     const countSpecialCharacters = "";
     console.log(`${countSpecialCharacters} special characters.`);
   }
+
   if (document.getElementById("wordCheck").checked) {
     const countWords = "";
     console.log(`${countWords} words.`);
   }
+
   if (document.getElementById("sentenceCheck").checked) {
     const countSentences = "";
     console.log(`${countSentences} sentences.`);
   }
+
   // const joinedUserArr = userArr.join("");
   // const userArrLength = joinedUserArr.length;
 
