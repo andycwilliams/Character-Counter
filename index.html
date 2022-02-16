@@ -14,21 +14,16 @@
 <div class="w3-top">
   
   <div class="w3-bar w3-theme w3-top w3-large">
-    <h1 style="justify-content:center";>Text Counter</h1>
+    <!-- <h1 style="justify-content:center";>Text Counter</h1> -->
+    <header><h1>Character Counter</h1></header>
   </div>
 </div>
 
 <main>
-  <h1>Text Counter</h1>
-  <h1>Text Counter</h1>
-  <h1>Text Counter</h1>
-  <h1i id="myHeader">Text Counter</h1>
-
 <div class="w3-main" style="margin-left:250px">
-
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Let's Count Some Stuff</h1>
+      <h1 class="w3-text-teal" style="margin-top:40px">Let's Count Some Stuff</h1>
       <p>Enter your text in the field below, then select what you would like to count.</p><br>
       <div class="tag">Letters: 
           <input type="checkbox" id="letterCheck" class="regular-checkbox" checked /><label for="checkbox-1-1"></label></div>
@@ -45,15 +40,14 @@
       <button onclick="checkText()">Check!</button><br><br>
 
       <textarea class="w3-padding-16" id="userText" style="padding: 10px; border: 2px solid black;" rows="6" cols="100" maxlength="100" onkeyup="counterFunction()">Default123!@#$</textarea>
-      <p>Please enter no more than 100 characters</p>
       <p id="characterLimit" style="color: #aaa">100 characters remaining</p>
       <p id="characterTotal" style="color: #aaa">0 characters</p>
       <h1 class="w3-text-teal">Stuff That Was Counted</h1>
-      <ul id="finalCount"></ul>
+      <ul id="finalCount">Your results will go here.</ul>
     </div>
   </div>
 </main>
-  <footer id="myFooter">
+  <footer>
     <div class="w3-container w3-theme-l3 w3-padding-16">
       <p><b>&e</b></p>
       <a class="fa fa-github w3-hover-opacity" style="text-decoration: none;" href="https://github.com/andycwilliams" target="_blank"></a>

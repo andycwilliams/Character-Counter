@@ -1,4 +1,5 @@
 let finalCount = document.getElementById("finalCount");
+// const userText = document.getElementById("userText").value;
 
 const checkText = () => {
   const userText = document.getElementById("userText").value;
@@ -113,19 +114,10 @@ const counterFunction = () => {
   const characterTotal = document.getElementById("characterTotal");
   const userText = document.getElementById("userText").value;
 
-  const maxLength = 100;
   const currentLength = userText.length;
-  const remainingCount = maxLength - currentLength;
+  const remainingCount = 100 - currentLength;
 
-  if (remainingCount < 0) {
-    characterLimit.innerHTML =
-      '<span style="color: red;">You have exceeded the limit of ' +
-      maxLength +
-      " characters</span>";
-  } else {
-    characterLimit.innerHTML = remainingCount + " characters remaining";
-  }
-
+  characterLimit.innerHTML = remainingCount + " characters remaining";
   characterTotal.innerHTML = userText.length + " characters";
 };
 
