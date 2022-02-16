@@ -12,17 +12,18 @@
 <body>
 
 <div class="w3-top">
-  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Logo</a>
+  
+  <div class="w3-bar w3-theme w3-top w3-large">
+    <h1 style="justify-content:center";>Text Counter</h1>
   </div>
 </div>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <main>
+  <h1>Text Counter</h1>
+  <h1>Text Counter</h1>
+  <h1>Text Counter</h1>
+  <h1i id="myHeader">Text Counter</h1>
+
 <div class="w3-main" style="margin-left:250px">
 
   <div class="w3-row w3-padding-64">
@@ -34,25 +35,26 @@
       <div class="tag">Numbers:  
           <input type="checkbox" id="numberCheck" class="regular-checkbox" checked /><label for="checkbox-1-1"></label></div>
       <div class="tag">Special Characters:  
-          <input type="checkbox" id="specialCharCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+          <input type="checkbox" id="specialCharCheck" class="regular-checkbox" checked /><label for="checkbox-1-1"></label></div>
       <div class="tag">Words:  
-          <input type="checkbox" id="wordCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+          <input type="checkbox" id="wordCheck" class="regular-checkbox" checked /><label for="checkbox-1-1"></label></div>
       <div class="tag">Sentences:   
-          <input type="checkbox" id="sentenceCheck" class="regular-checkbox" /><label for="checkbox-1-1"></label></div>
+          <input type="checkbox" id="sentenceCheck" class="regular-checkbox" disabled /><label for="checkbox-1-1"></label></div>
       <div class="tag">Total Characters:  
           <input type="checkbox" id="characterCheck" class="regular-checkbox" checked /><label for="checkbox-1-1"></label></div>
       <button onclick="checkText()">Check!</button><br><br>
 
-      <textarea class="w3-padding-16" id="userText" style="padding: 10px; border: 2px solid black;" rows="6" cols="100" maxlength="100" value="TETDSFGDFGDFG">Default123!@#$</textarea>
+      <textarea class="w3-padding-16" id="userText" style="padding: 10px; border: 2px solid black;" rows="6" cols="100" maxlength="100" onkeyup="counterFunction()">Default123!@#$</textarea>
       <p>Please enter no more than 100 characters</p>
-      <p id="characterLimit">100 characters remaining</p>
-      <p id="characterTotal">0 characters</p>
-      <div id="finalCount"></div>
+      <p id="characterLimit" style="color: #aaa">100 characters remaining</p>
+      <p id="characterTotal" style="color: #aaa">0 characters</p>
+      <h1 class="w3-text-teal">Stuff That Was Counted</h1>
+      <ul id="finalCount"></ul>
     </div>
   </div>
 </main>
   <footer id="myFooter">
-    <div class="w3-container w3-theme-l2 w3-padding-32">
+    <div class="w3-container w3-theme-l3 w3-padding-16">
       <p><b>&e</b></p>
       <a class="fa fa-github w3-hover-opacity" style="text-decoration: none;" href="https://github.com/andycwilliams" target="_blank"></a>
       <a class="fa fa-linkedin w3-hover-opacity" style="text-decoration: none;" href="https://www.linkedin.com/in/andrewcharleswilliams/" target="_blank"></a>

@@ -1,124 +1,111 @@
-// Get the Sidebar
-// const mySidebar = document.getElementById("mySidebar");
-
-// Get the DIV with overlay effect
-// const overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-  if (mySidebar.style.display === "block") {
-    mySidebar.style.display = "none";
-    overlayBg.style.display = "none";
-  } else {
-    mySidebar.style.display = "block";
-    overlayBg.style.display = "block";
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-  mySidebar.style.display = "none";
-  overlayBg.style.display = "none";
-}
-
-// ----------------------------------------------------------------
+let finalCount = document.getElementById("finalCount");
 
 const checkText = () => {
-  // const finalCount = `Your text contains:`;
-  // document.getElementById("finalCount").innerHTML = finalCount;
   const userText = document.getElementById("userText").value;
-  // const countLetters = userText.replace(/\s+/g, "").length;
-  // const finalCount = `Your text contains:`;
-  // const characterTotal = document.getElementById("characterTotal");
+  let p = document.createElement("p");
+  p.innerText = `This text contains...`;
+  finalCount.appendChild(p);
 
   if (userText === "") {
     console.log("Please enter some text.");
-  }
+  } else {
+    // LETTERS
+    if (document.getElementById("letterCheck").checked) {
+      const lowercaseUserText = userText.toLowerCase();
+      const allLetters = "abcdefghijklmnopqrstuvwxyz";
+      let letter;
+      let count = 0;
 
-  if (document.getElementById("letterCheck").checked) {
-    const lowercaseUserText = userText.toLowerCase();
-    const allLetters = "abcdefghijklmnopqrstuvwxyz";
-    let letter;
-    let count = 0;
+      for (let i = 0; i < lowercaseUserText.length; i++) {
+        letter = lowercaseUserText.charAt(i);
+        if (allLetters.indexOf(letter) > -1) {
+          count = count + 1;
+        }
+      }
 
-    for (let i = 0; i < lowercaseUserText.length; i++) {
-      letter = lowercaseUserText.charAt(i);
-      if (allLetters.indexOf(letter) > -1) {
-        count = count + 1;
+      if (count > 0) {
+        console.log(`${count} letters.`);
+        let li = document.createElement("li");
+        li.innerText = ``;
+        li.innerText = `${count} letters.`;
+        finalCount.appendChild(li);
+      } else {
+        console.log("No letters detected.");
       }
     }
 
-    if (count > 0) {
-      console.log(`${count} letters.`);
-      // finalCount.innerHTML = `${countLetters} letters.`;
-      // return countLetters;
-    } else {
-      console.log("No letters detected.");
-    }
-  }
+    // NUMBERS
+    if (document.getElementById("numberCheck").checked) {
+      const numbers = "0123456789";
+      let number;
+      let count = 0;
 
-  if (document.getElementById("numberCheck").checked) {
-    const numbers = "0123456789";
-    let number;
-    let count = 0;
+      for (let i = 0; i < userText.length; i++) {
+        number = userText.charAt(i);
+        if (numbers.indexOf(number) > -1) {
+          count = count + 1;
+        }
+      }
 
-    for (let i = 0; i < userText.length; i++) {
-      number = userText.charAt(i);
-      if (numbers.indexOf(number) > -1) {
-        count = count + 1;
+      if (count > 0) {
+        console.log(`${count} numbers.`);
+        let li = document.createElement("li");
+        li.innerText = `${count} numbers.`;
+        finalCount.appendChild(li);
+      } else {
+        console.log("No numbers detected.");
       }
     }
 
-    if (count > 0) {
-      console.log(`${count} numbers.`);
-      // finalCount.innerHTML = `${countLetters} letters.`;
-      // return countLetters;
-    } else {
-      console.log("No numbers detected.");
+    // SPECIAL CHARACTERS
+    if (document.getElementById("specialCharCheck").checked) {
+      const specialCharacters = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+      let specChar;
+      let count = 0;
+
+      for (let i = 0; i < userText.length; i++) {
+        specChar = userText.charAt(i);
+        if (specialCharacters.indexOf(specChar) > -1) {
+          count = count + 1;
+        }
+      }
+
+      if (count > 0) {
+        console.log(`${count} special characters.`);
+        let li = document.createElement("li");
+        li.innerText = `${count} special characters.`;
+        finalCount.appendChild(li);
+      } else {
+        console.log("No special characters detected.");
+      }
+    }
+
+    // WORDS
+    if (document.getElementById("wordCheck").checked) {
+      const countWords = "";
+      console.log(`${countWords} words.`);
+    }
+
+    // SENTENCES
+    if (document.getElementById("sentenceCheck").checked) {
+      const countSentences = "";
+      console.log(`${countSentences} sentences.`);
+    }
+
+    // CHARACTERS
+    if (document.getElementById("characterCheck").checked) {
+      const countCharacters = userText.replace(/\s+/g, "").length;
+      if (countCharacters > 0) {
+        console.log(`${countCharacters} characters.`);
+        let li = document.createElement("li");
+
+        li.innerText = `${countCharacters} characters.`;
+        finalCount.appendChild(li);
+      } else {
+        console.log("No characters detected.");
+      }
     }
   }
-
-  if (document.getElementById("characterCheck").checked) {
-    const countCharacters = userText.replace(/\s+/g, "").length;
-    if (countCharacters > 0) {
-      console.log(`${countCharacters} characters.`);
-    } else {
-      console.log("No characters detected.");
-    }
-    // finalCount.innerHTML = `${countCharacters} characters.`;
-    return countCharacters;
-  }
-
-  if (document.getElementById("specialCharCheck").checked) {
-    const countSpecialCharacters = "";
-    console.log(`${countSpecialCharacters} special characters.`);
-  }
-
-  if (document.getElementById("wordCheck").checked) {
-    const countWords = "";
-    console.log(`${countWords} words.`);
-  }
-
-  if (document.getElementById("sentenceCheck").checked) {
-    const countSentences = "";
-    console.log(`${countSentences} sentences.`);
-  }
-
-  // const joinedUserArr = userArr.join("");
-  // const userArrLength = joinedUserArr.length;
-
-  // let result = "";
-  // for (i = 0; i < getCharCount; i++) {
-  //   result += joinedUserArr.charAt(Math.floor(Math.random() * userArrLength));
-  // }
-
-  // const finalCount = `Your text contains: \n ${countLetters} letters. ${countNumbers} numbers. ${countCharacters} characters. ${countSpecialCharacters} special characters. ${countWords} words. ${countSentences} sentences.`;
-  // document.getElementById("finalCount").innerHTML = finalCount;
-  // const finalCount = `Your text contains:`;
-
-  // characterTotal.innerHTML = userText.length + " characters";
-
-  counterFunction();
 };
 
 const counterFunction = () => {
@@ -142,12 +129,8 @@ const counterFunction = () => {
   characterTotal.innerHTML = userText.length + " characters";
 };
 
+counterFunction();
+
 // ----------------------------------------------------------------
 
-// const charTypeArr = {
-//   // uppercase: ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
-//   // lowercase: ["abcdefghijklmnopqrstuvwxyz"],
-//   letters: ["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"],
-//   numbers: ["0123456789"],
 //   specialCharacters: ["!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"],
-// };
