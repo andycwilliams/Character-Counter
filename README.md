@@ -4,7 +4,7 @@ Site that counts how many characters/vowels/consonants/words/sentences/etc. are 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Deployed Link](https://dashboard.heroku.com/apps/character-counter-acw)
+[Deployed Link](https://character-counter-acw.herokuapp.com/)
 
 <!-- ![Screenshot of deployed application, homepage of site with timer and random tip](/screenshot.png?raw=true "Screenshot of deployed application") -->
 
