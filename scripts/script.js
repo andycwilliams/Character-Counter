@@ -3,9 +3,16 @@ let finalCount = document.getElementById("finalCount");
 
 const checkText = () => {
   const userText = document.getElementById("userText").value;
-  let p = document.createElement("p");
-  p.innerText = `This text contains...`;
-  finalCount.appendChild(p);
+
+  const h4 = document.createElement("h4");
+  h4.setAttribute("id", "thisIsATest");
+  const txt = document.createTextNode("This text contains...");
+  h4.appendChild(txt);
+  finalCount.replaceChild(h4, finalCount.childNodes[0]);
+
+  // h4.innerText = ``;
+  // h4.innerText = `This text contains...`;
+  // finalCount.appendChild(p);
 
   if (userText === "") {
     console.log("Please enter some text.");
@@ -83,7 +90,10 @@ const checkText = () => {
 
     // WORDS
     if (document.getElementById("wordCheck").checked) {
-      const countWords = "";
+      const countWords = userText.split(" ").length;
+      let li = document.createElement("li");
+      li.innerText = `${countWords} words.`;
+      finalCount.appendChild(li);
       console.log(`${countWords} words.`);
     }
 

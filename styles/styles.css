@@ -1,14 +1,9 @@
 :root {
   background-color: #ecf5ff;
-  /* font-size: 62.5%; */
 }
 
 * {
-  /* box-sizing: border-box; */
-  font-family: Arial, Helvetica, sans-serif;
-  /* margin: 0; */
-  /* padding: 0; */
-  /* color: #333; */
+  box-sizing: border-box;
 }
 
 html,
@@ -25,14 +20,19 @@ h6 {
 header {
   display: flex;
   justify-content: center;
+  /* align-items: center; */
   color: white;
   background-color: black;
 }
 
 footer {
-  display: flex;
-  /* justify-content: center; */
-  /* position: absolute-bottom; */
-  /* display: inline-block; */
-  /* align-items: center; */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  text-align: center;
+}
+
+.fa {
+  text-decoration: none;
 }
