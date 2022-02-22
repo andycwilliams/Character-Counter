@@ -1,20 +1,12 @@
 let finalCount = document.getElementById("finalCount");
-// const userText = document.getElementById("userText").value;
 
 const checkText = () => {
   const userText = document.getElementById("userText").value;
 
-  const h4 = document.createElement("h4");
-  h4.setAttribute("id", "thisIsATest");
-  const txt = document.createTextNode("This text contains...");
-  h4.appendChild(txt);
-  finalCount.replaceChild(h4, finalCount.childNodes[0]);
-
-  // h4.innerText = ``;
-  // h4.innerText = `This text contains...`;
-  // finalCount.appendChild(p);
+  finalCount.innerHTML = "This text contains...";
 
   if (userText === "") {
+    finalCount.innerHTML = "Please enter some text.";
     console.log("Please enter some text.");
   } else {
     // LETTERS
